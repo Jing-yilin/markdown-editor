@@ -42,7 +42,10 @@ export const useEditorStore = create<EditorState>()(
       content: defaultContent,
       setContent: (content) => set({ content }),
       theme: 'light',
-      setTheme: (theme) => set({ theme }),
+      setTheme: (theme) => {
+        document.documentElement.className = theme
+        set({ theme })
+      },
       fontSize: 14,
       setFontSize: (fontSize) => set({ fontSize }),
     }),

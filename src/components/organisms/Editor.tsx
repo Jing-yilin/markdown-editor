@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 import MonacoEditor from '@monaco-editor/react'
+import { clsx } from 'clsx'
 import { Toolbar } from '@/components/molecules/Toolbar'
 import { useEditorStore } from '@/stores/editorStore'
 import { useMarkdown } from '@/hooks/useMarkdown'
@@ -13,8 +14,11 @@ export function Editor() {
   }, [setContent])
 
   return (
-    <div className="flex h-screen bg-editor-bg">
-      <div className="flex-1 flex flex-col border-r border-editor-border">
+    <div className={clsx(
+        'flex h-screen',
+        theme === 'light' ? 'bg-white' : 'bg-gray-900'
+      )}>
+      <div className="flex-1 flex flex-col border-r border-gray-200 dark:border-gray-700">
         <Toolbar
           onThemeChange={setTheme}
           onFontSizeChange={setFontSize}
