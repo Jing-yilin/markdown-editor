@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --editor-bg: 255 255 255;
+    --editor-text: 36 41 47;
+    --editor-border: 224 224 224;
+    --editor-toolbar: 245 245 245;
+  }
+
+  .dark {
+    --editor-bg: 24 24 27;
+    --editor-text: 250 250 250;
+    --editor-border: 63 63 70;
+    --editor-toolbar: 39 39 42;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
